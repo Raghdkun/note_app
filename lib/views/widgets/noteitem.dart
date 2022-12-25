@@ -7,30 +7,34 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15,vertical: 40),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 40),
       decoration: BoxDecoration(
-          color: Colors.yellow[400], borderRadius: BorderRadius.circular(16)),
+          boxShadow: [BoxShadow(blurStyle: BlurStyle.outer, color: Colors.black54,spreadRadius: 1 , blurRadius: 8)],
+          color: Colors.yellow[400],
+          borderRadius: BorderRadius.circular(16)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
-            title: Text(
-              "Subject",
-              style: TextStyle(color: Colors.black, fontSize: 30),
-            ),
-            subtitle: Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Text("content", style: TextStyle(color: Colors.black.withOpacity(.70), fontSize: 23)),
-            ),
-            trailing: IconButton(
+              title: Text(
+                "Subject",
+                style: TextStyle(color: Colors.black, fontSize: 30),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text("content",
+                    style: TextStyle(
+                        color: Colors.black.withOpacity(.70), fontSize: 23)),
+              ),
+              trailing: IconButton(
                 onPressed: () {},
                 icon: Icon(FontAwesomeIcons.trash),
-                  color: Colors.black,
-                )),
-          
+                color: Colors.black,
+              )),
           Padding(
-            padding: const EdgeInsets.only(right: 18,top: 10 ),
-            child: Text("Date", style: TextStyle(color: Colors.black.withOpacity(.70))),
+            padding: const EdgeInsets.only(right: 18, top: 10),
+            child: Text("Date",
+                style: TextStyle(color: Colors.black.withOpacity(.70))),
           )
         ],
       ),
