@@ -7,16 +7,19 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 40),
-      decoration: BoxDecoration(
-          boxShadow: [BoxShadow(blurStyle: BlurStyle.outer, color: Colors.black54,spreadRadius: 1 , blurRadius: 8)],
-          color: Colors.yellow[400],
-          borderRadius: BorderRadius.circular(16)),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 40),
+      decoration: BoxDecoration(boxShadow: const [
+        BoxShadow(
+            blurStyle: BlurStyle.outer,
+            color: Colors.black54,
+            spreadRadius: 1,
+            blurRadius: 8)
+      ], color: Colors.yellow[400], borderRadius: BorderRadius.circular(16)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
-              title: Text(
+              title: const Text(
                 "Subject",
                 style: TextStyle(color: Colors.black, fontSize: 30),
               ),
@@ -28,7 +31,7 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(FontAwesomeIcons.trash),
+                icon: const Icon(FontAwesomeIcons.trash),
                 color: Colors.black,
               )),
           Padding(

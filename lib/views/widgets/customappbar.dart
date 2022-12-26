@@ -2,23 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:notes/views/widgets/customsearchicon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  final String title ;
+  const CustomAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 110,
         ),
         Text(
-          "Notes",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+          title,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        Spacer(
+        const Spacer(
           flex: 1,
         ),
-        CustomSearchIcon(),
+        const CustomSearchIcon(),
       ],
     );
   }

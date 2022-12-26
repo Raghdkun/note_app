@@ -1,7 +1,5 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes/views/widgets/addnote.dart';
 import 'package:notes/views/widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -9,14 +7,26 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      floatingActionButton: FloatingActionButton.extended(onPressed: (){}, label: Row(
-        children: [
-          Text('Add',style:TextStyle(fontWeight: FontWeight.bold)),
-          Icon(Icons.add)
-        ],
-      ), elevation: 5,),
-      body: NotesViewBody(),
+    return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          showModalBottomSheet(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
+              context: context,
+              builder: (context) {
+                return const AddNote();
+              });
+        },
+        label: Row(
+          children: const [
+            Text('Add', style: TextStyle(fontWeight: FontWeight.bold)),
+            Icon(Icons.add)
+          ],
+        ),
+        elevation: 5,
+      ),
+      body: const NotesViewBody(),
     );
   }
 }
